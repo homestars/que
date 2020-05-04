@@ -9,7 +9,7 @@ module Que
         # Check out a PG::Connection object from ActiveRecord's pool.
         def checkout
           wrap_in_rails_executor do
-            ::ActiveRecord::Base.connection_pool.with_connection do |conn|
+            Que::ActiveRecord::Model.connection_pool.with_connection do |conn|
                yield conn.raw_connection
             end
           end
