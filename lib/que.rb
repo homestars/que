@@ -43,6 +43,7 @@ module Que
   require_relative 'que/result_queue'
   require_relative 'que/version'
   require_relative 'que/worker'
+  require_relative 'que/formatters/output_formatter'
 
   class << self
     attr_writer :default_queue
